@@ -1,5 +1,7 @@
 # CLI-aplikacja
 
+# Otrzymujemy liste kontaktow
+
 node index.js --action list
 ![Wynik w konsoli](/assets/action%20list.png)
 
