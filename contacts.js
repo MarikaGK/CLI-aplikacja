@@ -33,10 +33,11 @@ const getContactById = async (contactId) => {
 
 const removeContact = async (contactId) => {
   const contacts = await getContactsList();
-  const filteredContacts = contacts.filter((c) => c.id !== contactId);
   const deletedContact = contacts.filter((c) => c.id === contactId);
+  const filteredContacts = contacts.filter((c) => c.id !== contactId);
+  console.log(`You just removed from your contacts`);
+  console.table(deletedContact);
   fs.writeFile(contactsPath, JSON.stringify(filteredContacts));
-  console.log(`You just removed ${deletedContact.name} from your contacts`);
   console.log("Contacts.json was updated:");
   console.table(filteredContacts);
 };
